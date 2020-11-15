@@ -30,6 +30,12 @@ include_once 'layouts/nav.php';
                                       echo $_SESSION['apellidos_us']; ?></h1>
         </b>
         </div>
+        <div class="alert alert-success text-center" id="update" style="display:none;">
+                                <span><i class="fas fa-check m-1"></i>Contraseña cambiada</span>
+                            </div>
+                            <div class="alert alert-danger text-center" id="noupdate" style="display:none;">
+                                <span><i class="fas fa-times m-1"></i>Contraseña incorrecta</span>
+                            </div>
         <form id="form-pass">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -43,12 +49,12 @@ include_once 'layouts/nav.php';
                 </div>
             <input id="newpass" type="text" class="form-control" placeholder="Ingrese contraseña nueva">
             </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn bg-gradient-primary">Guardar</button>
+            </div>
         </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Cerrar</button>
-        <button type="submit" class="btn btn-outline-primary">Guardar</button>
-      </div>
     </div>
   </div>
 </div>

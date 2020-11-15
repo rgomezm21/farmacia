@@ -79,4 +79,23 @@ $(document).ready(function() {
         }
         e.preventDefault();
     })
+    $('#form-pass').submit(e => {
+        let oldpass = $('#oldpass').val();
+        let newpass = $('#newpass').val();
+        funcion = 'cambiar_contraseña';
+        $.post('../controlador/UserController.php',{id_usuario,funcion,oldpass,newpass},(response)=>{
+            if (response == 'update') {
+                $('#update').hide('slow');
+                $('#update').show(2000);
+                $('#update').hide(2000); 
+                $('#form-pass').trigger('reset');
+            }else{
+                $('#noupdate').hide('slow');
+                $('#noupdate').show(2000);
+                $('#noupdate').hide(2000); 
+                $('#form-pass').trigger('reset');
+            }
+        })
+        e.preventDefault();
+    })
 })
